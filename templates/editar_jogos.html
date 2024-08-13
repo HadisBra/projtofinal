@@ -1,0 +1,27 @@
+{% extends 'estilo_das_paginas.html' %}
+{% block body %}
+    <div class="row">
+    <div class="col-5 mx-auto">
+        <h3>Editar</h3>
+<form method="post" action="{{ url_for('editar_jogos', id=datas.id) }}">
+    <div class="form-group">
+        <label>Nome</label>
+        <input type="text" name="nome" required class="form-control" value="{{datas.nome}}">
+    </div>
+    <div class="form-group">
+        <label>Genero</label>
+        <input type="text" name="genero" required class="form-control" value="{{datas.genero}}">
+    </div>
+    <div class="form-group">
+        <label>Ano</label>
+        <input type="text" name="ano" required class="form-control" value="{{datas.ano}}">
+    </div>
+    <div class="form-group">
+        <label>Plataforma</label>
+        <input type="text" name="plataforma" required class="form-control" value="{{datas.plataforma}}">
+    </div>
+    <input type="submit" value="Confirmar" class="btn btn-primary">
+</form>
+    </div>
+    </div>
+{% endblock %}

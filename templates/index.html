@@ -1,0 +1,28 @@
+{% extends 'estilo_das_paginas.html' %}
+{% block body %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th>Nome</th>
+            <th>Genero</th>
+            <th>Ano</th>
+            <th>Plataforma</th>
+            <th>Ações</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for row in datas %}
+        <tr>
+            <td>{{ row.nome }}</td>
+            <td>{{ row.genero }}</td>
+            <td>{{ row.ano }}</td>
+            <td>{{ row.plataforma }}</td>
+            <td>
+                <a href="{{ url_for('editar_jogos', id=row.id) }}" class="btn btn-primary">Editar</a>
+                <a href="{{ url_for('deletar_jogos', id=row.id) }}" class="btn btn-danger">Deletar</a>
+            </td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
