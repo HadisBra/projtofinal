@@ -1,40 +1,138 @@
 <!DOCTYPE html>
 <html lang="en" xmlns="http://www.w3.org/1999/html">
 <head>
+    <link rel="icon" href="https://cdn.icon-icons.com/icons2/2220/PNG/512/discord_game_voice_chat_gaming_icon_134337.png" type="image/png">
     <meta charset="UTF-8">
-    <title>Cadastro de Jogos</title>
+    <title>GameCon</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM" crossorigin="anonymous"></script>
+    <style>
+        body {
+            background-image: url('https://img.freepik.com/vetores-gratis/conjunto-de-logotipo-de-videogame-emblemas-com-jogador-controlador-de-console-joystick-vintage-e-moderno-fone-de-ouvido-ilustracao-em-vetor-isolada-para-modelo-de-etiqueta-de-jogo-online_74855-8666.jpg?t=st=1723676359~exp=1723679959~hmac=eae5cbf14a0ac1a8295ec11d6e90e6a9ca6f2be308ab334800b8a05c9591327b&w=996');
+            background-size: cover;
+            background-repeat: no-repeat;
+            background-attachment: fixed;
+            color: #d3d3d3; /* Cor de texto mais suave */
+            font-family: 'Press Start 2P', cursive;
+        }
+
+        .navbar {
+            background-color: rgba(58, 58, 58, 0.8); /* Cor de fundo da navbar mais suave e transparente */
+            border-bottom: 2px solid #d9d1d1; /* Cor da borda mais suave */
+        }
+
+        .nav-link {
+            color: #d3d3d3 !important; /* Cor de link mais suave */
+        }
+
+        .nav-link:hover {
+            color: #ffcc00 !important; /* Cor de hover mais suave */
+        }
+
+        .container {
+            background-color: rgba(168, 162, 162, 0.8); /* Cor de fundo do container mais suave e transparente */
+            padding: 20px;
+            border: 2px solid #d3d3d3; /* Cor da borda mais suave */
+            border-radius: 10px;
+        }
+
+        .alert {
+            background-color: rgba(58, 58, 58, 0.8); /* Cor de fundo do alerta mais suave e transparente */
+            color: #d3d3d3; /* Cor de texto do alerta mais suave */
+            border: 1px solid #d3d3d3; /* Cor da borda do alerta mais suave */
+        }
+
+        .btn {
+            background-color: #d3d3d3; /* Cor de fundo do botão mais suave */
+            color: #2c2c2c; /* Cor de texto do botão mais suave */
+            border: 2px solid #d3d3d3; /* Cor da borda do botão mais suave */
+        }
+
+        .btn:hover {
+            background-color: #ffcc00; /* Cor de fundo do botão ao hover mais suave */
+            color: #2c2c2c; /* Cor de texto do botão ao hover mais suave */
+        }
+
+        div {
+            color: #d3d3d3; /* Cor de texto das divs mais suave */
+        }
+        .form-title {
+    font-size: 24px;
+    color: #333;
+    margin-bottom: 20px;
+}
+.form-group label {
+    font-weight: bold;
+    color: #333;
+}
+
+.form-group input {
+    border: 1px solid #f60303;
+    padding: 10px;
+    width: 100%;
+    margin-bottom: 15px;
+    border-radius: 5px;
+}
+
+.form-title {
+    font-size: 24px;
+    color: #333; /* Cor do título do formulário */
+    margin-bottom: 20px;
+}
+.btn-primary {
+    background-color: #007bff;
+    border: none;
+    padding: 10px 20px;
+    color: white;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.btn-primary:hover {
+    background-color: #0056b3;
+}
+.navbar .pr {
+    position: absolute;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    margin: 10px;
+}
+
+
+    </style>
 </head>
 
 <body>
     <header>
-        <nav class="navbar navbar-expand-lg navbar-light bg-light">
-  <div class="container-fluid">
-    <div class="collapse navbar-collapse" id="navbarSupportedContent">
-      <ul class="navbar-nav me-auto mb-2 mb-lg-0">
-        <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="{{ url_for('index')}}">Home</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="{{ url_for('add_jogos')}}">Formulario</a>
-            </li>
-        </ul>
-    </div>
-  </div>
-</nav>
+        <nav class="navbar navbar-expand-lg navbar-light">
+            <div class="container-fluid">
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                        <li class="nav-item">
+                            <a class="nav-link active" aria-current="page" href="{{ url_for('index')}}">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="{{ url_for('add_jogos')}}">Formulario</a>
+                        </li>
+                        <li>
+                             <h2 class="pr">GamesCon</h2>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </nav>
     </header>
-<div class="container pt-3">
-    {% with messagens=get_flashed_messages(with_categories=true)%}
-{% if messagens%}
-{% for category, message in messagens%}
-    <div class="alert alert-{{category}}">{{ message }}</div>
-{% endfor %}
-{% endif %}
-{%endwith%}
-{% block body %}
-{% endblock %}
-
-</div>
+    <div class="container pt-3">
+        {% with messagens=get_flashed_messages(with_categories=true)%}
+        {% if messagens%}
+        {% for category, message in messagens%}
+        {% endfor %}
+        {% endif %}
+        {%endwith%}
+        {% block body %}
+        {% endblock %}
+        <div class="alert alert-{{category}}">{{ message }}</div>
+    </div>
 </body>
 </html>
